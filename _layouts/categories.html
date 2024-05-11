@@ -2,7 +2,6 @@
 layout: page
 # All the Categories of posts
 ---
-
 {% include lang.html %}
 
 {% assign HEAD_PREFIX = 'h_' %}
@@ -48,7 +47,6 @@ layout: page
           {% assign top_posts_size = site.categories[category_name] | size %}
           <span class="text-muted small font-weight-light">
             {% if sub_categories_size > 0 %}
-              {{ sub_categories_size }}
               {% if sub_categories_size > 1 %}
                 {{
                   site.data.locales[lang].categories.category_measure.plural
@@ -60,10 +58,10 @@ layout: page
                   | default: site.data.locales[lang].categories.category_measure
                 }}
               {% endif -%}
-              ,
+              {{ sub_categories_size }}
+              {{- '개' }}
+              ,&nbsp
             {% endif %}
-
-            {{ top_posts_size }}
 
             {% if top_posts_size > 1 %}
               {{
@@ -76,6 +74,9 @@ layout: page
                 | default: site.data.locales[lang].categories.post_measure
               }}
             {% endif %}
+            {{ ' ' }}
+            {{ top_posts_size }}
+            {{- '개' }}
           </span>
         </span>
 
@@ -111,18 +112,20 @@ layout: page
 
                 {% assign posts_size = site.categories[sub_category] | size %}
                 <span class="text-muted small font-weight-light">
-                  {{ posts_size }}
-
                   {% if posts_size > 1 %}
                     {{
                       site.data.locales[lang].categories.post_measure.plural
                       | default: site.data.locales[lang].categories.post_measure
                     }}
+                    {{ posts_size }}
+                    {{- '개' }}
                   {% else %}
                     {{
                       site.data.locales[lang].categories.post_measure.singular
                       | default: site.data.locales[lang].categories.post_measure
                     }}
+                    {{ posts_size }}
+                    {{- '개' }}
                   {% endif %}
                 </span>
               </li>
