@@ -1,5 +1,5 @@
 ---
-categories: [Github blog 만들기, Chirpy Theme]
+categories: [GitHub, GitHub-blog]
 tags: [jekyll, Chirpy, ChirpyTheme, jekyll_chirpy, installation, install, Error]
 author: lamininA1
 pin: false
