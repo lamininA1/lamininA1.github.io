@@ -15,6 +15,13 @@ date: Fri May 10 2024 22:32:45 GMT-0400 (북미 동부 하계 표준시)
 
 ### Error: tzinfo
 
+> 선요약:
+> 1. 해당 오류는 _config.yml 에서 Timezone을 설정하면 나타난다.
+> 2. tzinfo gem을 설치하는 것으로는 해결할 수 없다.
+> 3. Timezone은 설정하지 않아도 큰 문제는 없으므로 공란인 상태로 사용하자.
+{: .prompt-tip }
+
+
 *Chirpy Theme installation guide*를 보고 따라하다 보면 `_config.yml` 파일을 수정하는 단계가 존재한다. 여기에는 치명적인 오류가 있으니, `Timezone`을 설정하면 *Github action* 혹은 *jekyll*을 통한 `local` 상에서의 `page build`에서 오류가 난다는 것이다. 해당 오류는 아무래도 모든 `Timezone` 에 대해서 오류를 나타내는 것으로 보인다.
 
  `_config.yml` 파일의 내용을 살펴보면 아래처럼 되어있는 것을 확인할 수 있다.
