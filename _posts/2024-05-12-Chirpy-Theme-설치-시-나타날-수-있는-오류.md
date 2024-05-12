@@ -6,6 +6,7 @@ pin: false
 published: true
 title: "Chirpy Theme 설치 시 나타날 수 있는 오류"
 date: Fri May 10 2024 22:32:45 GMT-0400 (북미 동부 하계 표준시)
+description: Chirpy Theme을 설치하여 나타날 수 있는 오류들을 모아놓습니다. 본 게시글은 추후 계속 수정됩니다.
 ---
 
 > 본 게시글은 Chirpy Theme 7.0.0 버전, 2024년 05월 11일 기준으로 작성되었습니다.
