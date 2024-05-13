@@ -86,6 +86,8 @@ blockquote {
 
   > p:last-child {
     margin-bottom: 0;
+    font-size: larger;
+    font-weight: 600;
   }
 
   &[class^='prompt-'] {
@@ -190,7 +192,7 @@ i {
   }
 
   .content {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* 최근 게시글 패널 폰트 사이즈 */
   }
 }
 
@@ -1457,7 +1459,7 @@ search {
   }
 
   .content {
-    font-size: 0.9rem;
+    font-size: 16px; /* 본문 글씨 크기 설정 */
   }
 }
 
@@ -1530,3 +1532,19 @@ search {
     }
   }
 } /* min-width: 1650px */
+
+/* 기울임 및 강조 등에 대한 설정 부여 */
+
+/* 기울임 색상 변경 */
+em {
+  color: var(--italic-dark);
+}
+/* 볼드체 색상 변경 */
+strong {
+  color: var(--strong-dark);
+}
+
+/* 본문 내용 단어별로 줄바꿈 */
+p {
+  word-break: keep-all;
+}

@@ -3,12 +3,12 @@
  */
 
 @mixin dark-syntax {
-  --language-border-color: #2d2d2d;
-  --highlight-bg-color: #151515;
-  --highlighter-rouge-color: #c9def1;
-  --highlight-lineno-color: #808080;
-  --inline-code-bg: #323238;
-  --code-color: #b0b0b0;
+  --language-border-color: #2d2d2d; /* 코드블럭 테두리 색상 */
+  --highlight-bg-color: #151515; /* 코드블럭 제목 표시줄 배경색 */
+  --highlighter-rouge-color: #eceded; /* 인라인 코드의 글씨 색상 변경이다. 다크 모드와 화이트 모드 모두 손봐야함. */
+  --highlight-lineno-color: #808080; /* 코드 블럭 내부의 줄번호에 대한 색상 */
+  --inline-code-bg: #323238; /* 인라인 코드의 배경 색상 변경 */
+  --code-color: #b0b0b0; /* 코드블럭 내부의 기본 글꼴 색상 */
   --code-header-text-color: #6a6a6a;
   --code-header-muted-color: #353535;
   --code-header-icon-color: #565656;
@@ -27,6 +27,7 @@
 
   .highlight table pre {
     margin: 0;
+    white-space: pre-wrap; /* 코드 블락의 줄바꿈 허용 */
   }
 
   .highlight,
