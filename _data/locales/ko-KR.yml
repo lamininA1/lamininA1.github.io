@@ -59,7 +59,8 @@ post:
   pageview_measure: 조회
   read_time:
     unit: 분
-    prompt: 읽기
+    prompt: 소요
+    head_line: 읽기
   relate_posts: 관련된 글
   share: 공유하기
   button:

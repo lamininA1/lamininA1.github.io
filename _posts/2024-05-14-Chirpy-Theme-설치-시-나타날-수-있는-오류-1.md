@@ -74,7 +74,7 @@ Please refer to https://tzinfo.github.io/datasourcenotfound for help resolving t
 
 ### Giscus 오류 (해결됨)
 
-![image](/assets/img/2024-05-14-Chirpy-Theme-설치-시-나타날-수-있는-오류-1/Pasted-image-20240514122921.png)
+![image](/assets/img/2024-05-14-Chirpy-Theme-설치-시-나타날-수-있는-오류-1/Pasted-image-20240514122921.png){: .shadow .rounded-10}
 
 Giscus를 설치하려는 다양한 가이드를 보고 열심히 따라왔음에도 불구하고 위처럼 연결이 거부되는 경우가 있다. 구글 크롬에서 `F12` 버튼을 눌러 확인해보면 아래와 같은 경고 문구를 확인할 수 있다.
 

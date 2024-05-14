@@ -24,6 +24,12 @@
   data-bs-placement="bottom"
   title="{{ words }} {{ site.data.locales[include.lang].post.words }}"
 >
+  <!-- 한국인에게 최적화된 게시글 읽기 속도에 대해 커스터마이징 -->
+  <!-- 아래 줄에서 ko-KR.yml에 명시된 read_time 중 head_line을 불러옵니다. -->
+  <!-- 아무런 클래스를 선언하지 않았으므로 텍스트로 처리됩니다. -->
+  {{- site.data.locales[include.lang].post.read_time.head_line -}}
+  {{ ' ' }}
+
   <em>
     {{- read_time -}}
     {{ ' ' }}
@@ -32,6 +38,8 @@
   {%- if include.prompt -%}
     {%- assign _prompt_words = read_prompt | number_of_words: 'auto' -%}
     {%- unless _prompt_words > 1 -%}{{ ' ' }}{%- endunless -%}
+    {{ ' ' }}
+    <!-- 띄어쓰기 추가했습니다. -->
     {{ read_prompt }}
   {%- endif -%}
 </span>
