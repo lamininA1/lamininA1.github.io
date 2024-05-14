@@ -69,3 +69,36 @@ Please refer to https://tzinfo.github.io/datasourcenotfound for help resolving t
 세상에나, 원래부터 있던 오류였다. `tzinfo` 대신에 `tzinfo-data`를 사용하면 된다. 루트 폴더에 있는 `Gemfile`을 열고 내부에 `gem "tzinfo-data"`를 추가한다. 이후 루트 폴더 경로의 `terminal`에서 `bundle install`을 입력하고 사이트를 빌드하면 문제 없이 구축된 블로그를 확인할 수 있다.
 
 해당 문제는 Windows 10 이후에서 발생한다. 이는 `Chirpy`가 윈도우 환경에 맞게 개발되지 않았기 때문이다. Installation 문서를 따라하면 도중에 `bash tools/init`을 수행하는 단계가 있는데 여기서 파일의 문법을 읽어내는 방식이 다르기 때문에 Windows에서 수행할 수 없게 된다. WSL system을 이용해서 억지로 수행하게 되면 `tzinfo` 설치에 문제가 생기는 듯 하다. 수동으로 해결할 수 있어 다행인듯...
+
+## Plug-in Error
+
+### Giscus 오류 (해결됨)
+
+![image](/assets/img/2024-05-14-Chirpy-Theme-설치-시-나타날-수-있는-오류-1/Pasted-image-20240514122921.png)
+
+Giscus를 설치하려는 다양한 가이드를 보고 열심히 따라왔음에도 불구하고 위처럼 연결이 거부되는 경우가 있다. 구글 크롬에서 `F12` 버튼을 눌러 확인해보면 아래와 같은 경고 문구를 확인할 수 있다.
+
+```scss
+Refused to frame 'https://giscus.app/' because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'self'".
+```
+
+해당 문장으로 인터넷을 열심히 찾아보면 CSP (Content Security Policy)와 연관된 오류로 나타난다고 한다. 여러 곳에서 이것저것 해결방법을 알려주지만 사실 *이게 문제가 아니다.* 사실 해당 문제는 `_config.yml` 파일의 설정 오류로 나타나는 것이다.
+
+이는 사실 `_config.yml` 파일의 `lang:` 을 설정하면서 생기는 오류다. `Chirpy` 테마는 `_data\locales` 폴더에 다양한 언어에 대한 사이트 기본 설정을 가지고 있다. 이것을 참고하여 `_config.yml`의 `lang:` 부분을 `ko-KR` 로 설정하면 `Giscus`는 오류를 나타낸다.
+
+  **Giscus에는 ko-KR에 해당하는 모듈이 없기 때문**이다. 해결 방법으로는 `lang: ko`로만 설정하고 `data\locales`의 `ko-KR.yml`를 `ko.yml`로 바꿔도 되지만 아래처럼 `_config.yml` 파일의 댓글 관련 부분에서 따로 언어를 설정하면 된다.
+
+```yml
+# Giscus options › https://giscus.app
+  giscus:
+    repo: # <gh-username>/<repo>
+    repo_id:
+    category:
+    category_id:
+    mapping: # optional, default to 'pathname'
+    strict: # optional, default to '0'
+    input_position: # optional, default to 'bottom'
+    lang: ko # optional, default to the value of `site.lang` # 이 부분을 바꾸면 된다.
+    reactions_enabled: # optional, default to the value of `1`
+```
+

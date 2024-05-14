@@ -14,8 +14,8 @@
   --text-muted-hightlight-color: inherit;
   --heading-color: #2a2a2a;
   --label-color: #585858;
-  --blockquote-border-color: #eeeeee;
-  --blockquote-text-color: #757575;
+  --blockquote-border-color: #2e80f2; /* 파란색으로 변경 */
+  --blockquote-text-color: #297d85; /* 초록색으로 변경 */
   --link-color: #0056b2;
   --link-underline-color: #dee2e6;
   --button-bg: #ffffff;
@@ -76,6 +76,7 @@
   --kbd-wrap-color: #bdbdbd;
   --kbd-text-color: var(--text-color);
   --kbd-bg-color: white;
+  /* 프롬프트 색상 변경 라인입니다. */
   --prompt-text-color: rgb(46, 46, 46, 0.77);
   --prompt-tip-bg: rgb(123, 247, 144, 0.2);
   --prompt-tip-icon-color: #03b303;
@@ -85,6 +86,10 @@
   --prompt-warning-icon-color: #ef9c03;
   --prompt-danger-bg: rgb(248, 215, 218, 0.56);
   --prompt-danger-icon-color: #df3c30;
+
+  /* 강조체 색상 변경 라인입니다. */
+  --strong-dark: #ff82b2;
+  --italic-dark: #ff82b2;
 
   /* Tags */
   --tag-border: #dee2e6;
