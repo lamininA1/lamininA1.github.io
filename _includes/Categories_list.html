@@ -1,0 +1,86 @@
+{% include lang.html %}
+
+{% assign HEAD_PREFIX = 'h_' %}
+{% assign LIST_PREFIX = 'l_' %}
+
+{% assign group_index = 0 %}
+
+{% assign sort_categories = site.categories | sort %}
+
+<section>
+  <!-- 아래의 것은 언어파일과 연동하여 글 목록을 표시한다. -->
+  <h2 class="panel-heading">{{ site.data.locales[lang].post.postlist }}</h2>
+
+  {% for category in sort_categories %}
+    {% assign category_name = category | first %}
+    {% assign posts_of_category = category | last %}
+    {% assign first_post = posts_of_category | first %}
+
+    {% if category_name == first_post.categories[0] %}
+      {% assign sub_categories = '' | split: '' %}
+
+      {% for post in posts_of_category %}
+        {% assign second_category = post.categories[1] %}
+        {% if second_category %}
+          {% unless sub_categories contains second_category %}
+            {% assign sub_categories = sub_categories | push: second_category %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign sub_categories = sub_categories | sort %}
+      {% assign sub_categories_size = sub_categories | size %}
+
+      <div class="post-list">
+        <!-- top-category -->
+        <div
+          id="{{ HEAD_PREFIX }}{{ group_index }}"
+          class="post-list-head"
+        >
+          <span class="ms-2">
+            <i class="far fa-folder{% if sub_categories_size > 0 %}-open{% endif %} fa-fw"></i>
+            <!-- 카테고리 이름을 따와서 표시해주는 것이기 때문에 무조건 있어야 하는 코드 -->
+            {% capture _category_url %}/categories/{{ category_name | slugify | url_encode }}/{% endcapture %}
+            <a href="{{ _category_url | relative_url }}" class="pos-list-2">{{ category_name }}</a>
+
+            <!-- content count -->
+            {% assign top_posts_size = site.categories[category_name] | size %}
+            <span class="text-muted small font-weight-light">
+              {{ '(' -}}
+              {{ top_posts_size }}
+              {{- ')' }}
+            </span>
+          </span>
+        </div>
+        <!-- .card-header -->
+
+        <!-- Sub-categories -->
+        {% if sub_categories_size > 0 %}
+          <div id="{{ LIST_PREFIX }}{{ group_index }}" class="collapse show" aria-expanded="true">
+            <ul class="post-list-group">
+              {% for sub_category in sub_categories %}
+                <li class="post-list-group-item">
+                  <i class="far fa-folder fa-fw"></i>
+
+                  {% capture _sub_ctg_url %}/categories/{{ sub_category | slugify | url_encode }}/{% endcapture %}
+                  <a href="{{ _sub_ctg_url | relative_url }}" class="pos-list-2">{{ sub_category }}</a>
+
+                  {% assign posts_size = site.categories[sub_category] | size %}
+                  <span class="text-muted small font-weight-light">
+                    {{ '(' -}}
+                    {{ posts_size }}
+                    {{- ')' }}
+                  </span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- .card -->
+
+      {% assign group_index = group_index | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+</section>

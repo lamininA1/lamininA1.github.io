@@ -14,6 +14,7 @@
   --code-header-icon-color: #565656;
   --clipboard-checked-color: #2bcc2b;
   --filepath-text-color: #cacaca;
+  --post-list-text-color: darkgrey;
 
   .highlight .gp {
     color: #87939d;
@@ -28,7 +29,7 @@
   .highlight table pre {
     margin: 0;
     white-space: pre-wrap; /* 코드 블락의 줄바꿈 허용 */
-    margin-left: 1.5rem;
+    margin-left: 1.5rem; /* 스타일의 통일성 */
   }
 
   .highlight,

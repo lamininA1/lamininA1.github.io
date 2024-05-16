@@ -6,7 +6,7 @@
   /* Framework color */
   --main-bg: white;
   --mask-bg: #c1c3c5;
-  --main-border-color: #f3f3f3;
+  --main-border-color: #e7d2ac;
 
   /* Common color */
   --text-color: #34343c;
@@ -16,7 +16,7 @@
   --label-color: #585858;
   --blockquote-border-color: #2e80f2; /* 파란색으로 변경 */
   --blockquote-text-color: #297d85; /* 초록색으로 변경 */
-  --link-color: #0056b2;
+  --link-color: #9d873f;
   --link-underline-color: #dee2e6;
   --button-bg: #ffffff;
   --btn-border-color: #e9ecef;
@@ -40,14 +40,14 @@
   /* Sidebar */
   --site-title-color: rgb(113, 113, 113);
   --site-subtitle-color: #717171;
-  --sidebar-bg: #f6f8fa;
+  --sidebar-bg: #faf9f6;
   --sidebar-border-color: #efefef;
   --sidebar-muted-color: #545454;
   --sidebar-active-color: #1d1d1d;
-  --sidebar-hover-bg: rgb(223, 233, 241, 0.64);
+  --sidebar-hover-bg: rgb(247, 233, 212, 0.64);
   --sidebar-btn-bg: white;
   --sidebar-btn-color: #8e8e8e;
-  --avatar-border-color: white;
+  --avatar-border-color: #e9c08ebf;
 
   /* Topbar */
   --topbar-bg: rgb(255, 255, 255, 0.7);
@@ -66,7 +66,7 @@
   --btn-share-color: gray;
   --btn-share-hover-color: #0d6efd;
   --card-bg: white;
-  --card-hovor-bg: #e2e2e2;
+  --card-hovor-bg: #ffd7ae;
   --card-shadow: rgb(104, 104, 104, 0.05) 0 2px 6px 0,
     rgba(211, 209, 209, 0.15) 0 0 0 1px;
   --footnote-target-bg: lightcyan;
@@ -76,6 +76,7 @@
   --kbd-wrap-color: #bdbdbd;
   --kbd-text-color: var(--text-color);
   --kbd-bg-color: white;
+
   /* 프롬프트 색상 변경 라인입니다. */
   --prompt-text-color: rgb(46, 46, 46, 0.77);
   --prompt-tip-bg: rgb(123, 247, 144, 0.2);

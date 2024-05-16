@@ -33,6 +33,7 @@ body {
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   font-family: $font-family-base;
+  font-weight: var(--font-weight);
 }
 
 /* --- Typography --- */
@@ -1539,6 +1540,7 @@ search {
 em {
   color: var(--italic-dark);
 }
+
 /* 볼드체 색상 변경 */
 strong {
   color: var(--strong-dark);
@@ -1547,4 +1549,59 @@ strong {
 /* 본문 내용 단어별로 줄바꿈 */
 p {
   word-break: keep-all;
+}
+
+/* 글목록 스타일 선언 */
+ul.post-list-group {
+  padding-left: 20px;
+}
+
+li.post-list-group-item {
+  display: block;
+}
+
+a.pos-list-2 {
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+  font-size: 0.95rem;
+  color: var(--post-list-text-color);
+
+  &:hover {
+    @extend %link-hover;
+  }
+}
+
+/* 똑같이 ul 선언하여 내부까지 들어가서 post-list에 대한 것을 새롭게 생성하겠음. */
+ul {
+  li.post-item {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+    opacity: 0.9;
+    width: 100%;
+
+    a.post-list {
+      @include pt-pb(0.6rem);
+
+      display: flex;
+      align-items: center;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-top: 0.25rem;
+
+      /* 아이콘 스타일이기 때문에 이건 남겨두자. */
+      i {
+        font-size: 95%;
+        opacity: 0.8;
+        margin-right: 1.5rem;
+      }
+
+      /* 카테고리 끝에 나오는 게시글 개수에 대한 표시 */
+      span {
+        font-size: 90%;
+        letter-spacing: 0.2px;
+      }
+    }
+  }
 }

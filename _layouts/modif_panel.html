@@ -36,13 +36,22 @@ layout: compress
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               {% include_cached Categories_list.html lang=lang %}
-              {% include_cached update-list.html lang=lang %}
-              {% include_cached trending-tags.html lang=lang %}
+              <!--
+                최근 게시글 및 인기 태그 우측패널에서 제거하였음. liquid 언어로 적힌거라 주석도 이걸로 처리해야한다.
+              -->
+              {% comment %}
+                {% include_cached update-list.html lang=lang %}
+                {% include_cached trending-tags.html lang=lang %}
+              {% endcomment %}
             </div>
 
             {% for _include in layout.panel_includes %}
               {% assign _include_path = _include | append: '.html' %}
-              {% include {{ _include_path }} lang=lang %}
+              <!-- 최근 게시글 및 인기 태그를 포함하지 않도록 하는 코드 추가 -->
+              {% if _include_path != 'update-list.html' and _include_path != 'trending-tags.html' %}
+                {% include {{ _include_path }} lang=lang %}
+              {% endif %}
+              <!-- liquid에서 if를 썼으면 끝내주는 곳도 적어줘야 한다. -->
             {% endfor %}
           </aside>
         </div>

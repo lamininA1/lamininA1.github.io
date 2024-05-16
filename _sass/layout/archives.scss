@@ -45,7 +45,7 @@
       border-radius: 50%;
       width: 12px;
       height: 12px;
-      left: 21.5px;
+      left: 17px; /* 아카이브에 있는 선과 점의 위치가 안 맞아서 수정함. */
       border: 3px solid;
       background-color: var(--timeline-year-dot-color);
       border-color: var(--timeline-node-bg);

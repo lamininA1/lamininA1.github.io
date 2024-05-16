@@ -70,7 +70,7 @@ html {
     td {
       &:first-child {
         /* 코드 블락, 줄 번호 관련 */
-        display: none;
+        display: none; /* defult set: inline-block */
         margin-left: 1rem;
         margin-right: 0.75rem;
       }

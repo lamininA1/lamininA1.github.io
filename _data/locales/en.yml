@@ -70,6 +70,7 @@ post:
     share_link:
       title: Copy link
       succeed: Link copied successfully!
+  postlist: Post list # 기본적으로 쓸 수 있게 여기도 넣어줬다.
 
 # Date time format.
 # See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>

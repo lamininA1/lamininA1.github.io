@@ -27,6 +27,17 @@
           <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
         </a>
       </li>
+
+      <!--
+        중간에 글목록 만들어버리기
+        <li class="post-item">
+          <a class="post-list">
+            <i class="fa-fw fas fa-stream"></i>
+            <span>테스트</span>
+          </a>
+        </li>
+      -->
+
       <!-- the real tabs -->
       {% for tab in site.tabs %}
         <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
