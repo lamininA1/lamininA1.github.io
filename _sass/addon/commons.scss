@@ -1233,6 +1233,10 @@ search {
     }
   }
 
+  .highlight table pre {
+    white-space: pre !important; /* 코드 블락의 줄바꿈 비허용 */
+  }
+
   #avatar {
     width: 5rem;
     height: 5rem;
