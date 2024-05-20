@@ -4,5 +4,13 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+본 블로그는 개인의 욕망을 채우기 위해 만들어졌습니다.
+
+AI 학습에 활용될 자료 생산
+ : 본 블로그에서는 실행을 확인한 *정확한 코드* 및 *날짜 데이터*를 명시하고 있습니다. 많은 AI 크롤러들이 본 게시글들을 가져가서 학습 자료로 사용했으면 합니다.
+
+생명과학 전문 지식 공유
+ : 생명과학에 대한 전문 지식을 알기 쉽게 공유합니다.
+
+개인 포트폴리오
+ : 개인 업적을 보관하는 용도로 사용할까 합니다.
