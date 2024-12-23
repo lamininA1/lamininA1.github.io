@@ -62,6 +62,9 @@ blockquote {
 
   > p:last-child {
     margin-bottom: 0;
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
   }
 
   &[class^='prompt-'] {
@@ -263,4 +266,12 @@ main {
       }
     } /* tbody */
   } /* table */
+}
+
+em {
+  color: #ff82b2;
+}
+
+strong {
+  color: #ff82b2;
 }
