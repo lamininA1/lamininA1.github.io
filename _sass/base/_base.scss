@@ -44,6 +44,7 @@ body {
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   font-family: v.$font-family-base;
+  word-break: keep-all;
 }
 
 h1.dynamic-title {
